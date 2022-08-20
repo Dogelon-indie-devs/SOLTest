@@ -3,14 +3,20 @@ pragma solidity >=0.4.16 <0.9.0;
 
 contract DogelonIndieDevsContract {
 
- string DogelonIndieDevs;
+    struct Dogelon{
+        string Name;
+        string Symbol;
 
-    constructor () {
-      DogelonIndieDevs = "Dogelon Indie Devs @ 2022";
     }
+       
+    Dogelon DogelonData; 
 
-    function GetDevsData() public view returns (string memory) {
-        return DogelonIndieDevs;
+    function FillData() private {
+        DogelonData.Name         = "Dogelon";
+        DogelonData.Symbol       = "ELON";
+    }
+    function GetDogelonData() public view returns (Dogelon memory) {
+        return DogelonData;
     }
 
 }
